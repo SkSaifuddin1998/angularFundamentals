@@ -1,0 +1,19 @@
+<h2>pipe component is working start </h2>
+<div class="class1">
+  <h4>Pipes Example</h4>
+  City : {{city}} <br/>
+  Salary: {{salary}}<br/>
+  n: {{n}} <br/>
+  Current Time : {{dt}} <br/>
+  Person : {{person}} <br/>
+  <hr/>
+  City In Uppercase:: {{city | uppercase}} <br/>
+  City In Lowercase : {{city | lowercase}} <br/>
+  Slice : {{city | slice : 2:6}}<br/>
+  Currency in USD: {{salary | currency:"USD"}} <br/>
+  Currency in INR : {{salary | currency:"INR"}} <br/>
+  Short Date : {{dt | date : "shortDate"}} <br/>
+  Medium Date: {{dt | date: "mediumDate"}} <br/>
+  Medium: {{dt | date: "medium"}} > <br/>
+  Formatted Date : {{dt | date:"d/M/y"}}
+</div>:

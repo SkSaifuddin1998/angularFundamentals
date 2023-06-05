@@ -1,0 +1,92 @@
+
+<h2>Welcome component is working</h2>
+
+<h4>Registration</h4>
+
+Username : <input type="text" [(ngModel)]="username"/><br/>
+Password : <input type="password" [(ngModel)]="password"/><br/>
+Confirm Password : <input type="password" [(ngModel)]="confirmPassword"><br/>
+Gender :
+        <input type="radio" [(ngModel)]="gender" value="Male">Male
+        <input type="radio" [(ngModel)]="gender" value="Fe-Male">Fe-Male <br/>
+
+Country:
+       <select [(ngModel)]="country">
+          <option>-Select-</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+       </select> <br/>
+
+<input type="checkbox" [(ngModel)]="licenseAgreement"/> I Accept License Agreement <br/>
+<input type="submit" value="Register" (click)="RegisterClick()"/>
+<hr/>
+<div [innerHTML]="msg"></div>
+
+
+
+<div>
+  <h3>Style Directive Example</h3>
+
+ <div [style.color]="mycolor">{{marks}}</div>
+</div>
+
+
+<div>
+  <h3>ngClass Directive Example</h3>
+
+ <div [ngClass]="myclass">{{marks}}</div>
+</div>
+
+<div>
+  <h3>ngIf Directive Example</h3>
+
+<div *ngIf="b" style="background-color:azure;">Congratulations...!!</div>
+
+
+<div *ngIf="!b" style="background-color: red;">Better luck next time..!!</div>
+</div>
+
+<div>
+  <h3>ngIf else Directive Example</h3>
+
+<div *ngIf="b;then template1;else template2">
+
+</div>
+
+<ng-template #template1>
+  <div style="background-color:antiquewhite;">Congratulations...."</div>
+</ng-template>
+
+<ng-template #template2>
+     <div style="background-color:red">Better luck next time...</div>
+</ng-template>
+
+<div>
+  <h4>ngSwitch Example</h4>
+
+  <select [(ngModel)]="country">
+     <option>India</option>
+     <option>USA</option>
+     <option>UK</option>
+     <option>Japan</option>
+  </select>
+
+  <div [ngSwitch]="country">
+     <p *ngSwitchCase="'India'">India Details Here</p>
+     <p *ngSwitchCase="'USA'">USA Details Here</p>
+     <p *ngSwitchCase="'UK'">UK Details Here</p>
+     <p *ngSwitchCase="'Japan'">Japan Details Here</p>
+     <p *ngSwitchDefault>Please select country</p>
+  </div>
+
+</div>
+
+<div>
+  <h4>ngFor Example</h4>
+
+  <ul>
+     <li *ngFor="let city of cities">{{city}}</li>
+  </ul>
+
+</div>

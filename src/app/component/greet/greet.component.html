@@ -1,0 +1,71 @@
+<H2>Greet component is woking </H2>
+
+<div>
+  <h4>Data Bindings Example</h4>
+
+  First Name : {{fname}} <br/>
+
+  Last Name : {{lname}} <br/>
+
+  Age : {{age}} <br/>
+
+  Gender : {{gender}} <br/>
+
+  Country : {{country}} <br/>
+
+  Is Employed : {{isEmployed}} <br/>
+
+  <hr/>
+
+  First Name : <input type="text" [(ngModel)]="fname"/><br/>
+  Last Name : <input type="text" [(ngModel)]="lname"/><br/>
+  Age : <input type="text" [(ngModel)]="age"/><br/>
+  Gender :
+      <input type="radio" [(ngModel)]="gender" value="Male">Male
+      <input type="radio" [(ngModel)]="gender" value="Fe-Male">Fe-Male <br/>
+
+  Country :
+      <select [(ngModel)]="country">
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+      </select> <br/>
+
+      Is Employed : <input type="checkbox" [(ngModel)]="isEmployed"> <br/>
+  <input type="button" value="Submit" (click)="handleSubmitBtn()" />
+
+  </div>
+
+  <div>
+    <h4>ngFor with Object Array Example</h4>
+        <table border="1">
+             <tr>
+                <th>Emp Id</th>
+                <th>Emp Name</th>
+                <th>Emp Salary</th>
+                <th>Action</th>
+             </tr>
+             <tr *ngFor="let emp of employees  let i = index">
+                   <td>{{emp.empId}}</td>
+                   <td>{{emp.empname}}</td>
+                   <td>{{emp.salary}}</td>
+                   <td><input type="button" value="Delete" (click)="onDeleteClick(i)"></td>
+             </tr>
+             <tr>
+              <td><input type="text" [(ngModel)]="newemployee.empId" placeholder="Emp Id"></td>
+              <td><input type="text" [(ngModel)]="newemployee.empname" placeholder="Emp Name"></td>
+              <td><input type="text" [(ngModel)]="newemployee.salary" placeholder="Emp Salary"></td>
+              <td><input type="button" value="Insert" (click)="onInsertClick()"></td>
+           </tr>
+        </table>
+    </div>
+
+    <div>
+      <h4>ngFor with Searching and Sorting Data</h4>
+      <input type="text" placeholder="Search" [(ngModel)]="str">
+      <input type="button" value="Search" (click)="onSearchClick()">
+      <br/>
+   </div>
+
+
+
